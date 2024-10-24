@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        button {
+            background: #09f;
+            color: white;
+            border: 0;
+            padding: 4px 8px;
+            font-size: 18px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <button data-id="123">Me gusta</button>
+    <button data-id="456">Me gusta</button>
+    <button data-id="789">Me gusta</button>
+    <script>
+        //recuperamos el botón
+        const buttons = document.querySelectorAll('button')
+
+        buttons.forEach(button => {
+            // al hacer click en el botón tenemos que ejecutar una función
+            button.addEventListener('click', function () {
+                //recuperar la id del atributo del HTML
+                const id = button.getAttribute('data-id')
+    
+                //llamar a un servicio para actualizar si me gusta
+                // toggleLike(id)
+    
+                if (button.classList.contains('liked')) {
+                    button.classList.remove('liked')
+                    button.innerText = 'Me gusta'
+                } else {
+                    button.classList.add('liked')
+                    button.innerText = 'Ya no me gusta'
+                }
+            })
+        })
+    </script>
+</body>
+</html>
