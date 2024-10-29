@@ -1,7 +1,7 @@
 import './TwitterFollowCard.css'
 
 
-const TwitterFollowCard = ({ userName, name, isFollowing}) => {
+const TwitterFollowCard = ({ formatUserName, userName, name, isFollowing}) => {
 
     const imageSrc = `https://unavatar.io/${userName}`
 
@@ -15,7 +15,7 @@ const TwitterFollowCard = ({ userName, name, isFollowing}) => {
                 />
                 <div className='tw-followCard-info'>
                     <strong>{name}</strong>
-                    <span className='tw-followCard-infoUserName'>@{userName}</span>
+                    <span className='tw-followCard-infoUserName'>{formatUserName(userName)}</span>
                 </div>
             </header>
 
