@@ -2,15 +2,20 @@ import './App.css'
 import { TwitterFollowCard } from './Components/TwitterFollowCard'
 
 const App = () => {
+    const adandue = { isFollowing: true, userName: 'adandue'}
+    const veroo_monteroo = { isFollowing: false, userName: 'veroo_monteroo'}
+    const midudev = { isFollowing: true, userName: 'midudev'}
+    
+    
     return (
         <section className='App'>
-            <TwitterFollowCard isFollowing userName='adandue'>
+            <TwitterFollowCard {...adandue}>
                 Adán Dueñas Escobar
             </TwitterFollowCard>
-            <TwitterFollowCard isFollowing={false} userName='veroo_monteroo' >
+            <TwitterFollowCard {...veroo_monteroo} >
                 monTeroo!
             </TwitterFollowCard>
-            <TwitterFollowCard isFollowing userName='midudev' >
+            <TwitterFollowCard {...midudev} >
                 Miguel Ángel Durán
             </TwitterFollowCard>
         </section>
