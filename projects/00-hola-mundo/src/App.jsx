@@ -3,28 +3,30 @@ import { TwitterFollowCard } from './Components/TwitterFollowCard'
 
 const App = () => {
     const format = (userName) => `@${userName}`
+
+    const formattedUserName = <span>@adandue</span>
     return (
         <section className='App'>
             <TwitterFollowCard 
-                formatUserName={format} 
+                formattedUserName={formattedUserName} 
                 isFollowing 
                 userName='adandue' 
                 name='Adán Dueñas Escobar' 
                 />
             <TwitterFollowCard 
-                formatUserName={format} 
+                formattedUserName={formattedUserName} 
                 isFollowing={false} 
                 userName='veroo_monteroo' 
                 name='monTeroo!'
                 />
             <TwitterFollowCard 
-                formatUserName={format} 
+                formattedUserName={formattedUserName} 
                 isFollowing 
                 userName='midudev' 
                 name='Miguel Ángel Durán' 
                 />
             <TwitterFollowCard 
-                formatUserName={format} 
+                formattedUserName={formattedUserName} 
                 isFollowing={false} 
                 userName='freddier' 
                 name='Freddy Vega' 
