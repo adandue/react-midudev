@@ -4,13 +4,13 @@ import { TwitterFollowCard } from './Components/TwitterFollowCard'
 const App = () => {
     return (
         <section className='App'>
-            <TwitterFollowCard isFollowing userName='adandue'>
+            <TwitterFollowCard userName='adandue'>
                 Adán Dueñas Escobar
             </TwitterFollowCard>
-            <TwitterFollowCard isFollowing={false} userName='veroo_monteroo' >
+            <TwitterFollowCard userName='veroo_monteroo' >
                 monTeroo!
             </TwitterFollowCard>
-            <TwitterFollowCard isFollowing userName='midudev' >
+            <TwitterFollowCard  userName='midudev' >
                 Miguel Ángel Durán
             </TwitterFollowCard>
         </section>
