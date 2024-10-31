@@ -1,12 +1,17 @@
 import { useState } from 'react'
 import './TwitterFollowCard.css'
 
+const TwitterFollowCard = ({ children, userName = 'unknown' , name}) => {
+    const [isFollowing, setIsFollowing] = useState(false)
 
-const TwitterFollowCard = ({ children, userName = 'unknown' , name, isFollowing}) => {
     const imageSrc = `https://unavatar.io/${userName}`
     const text = isFollowing ? 'Siguiendo' : 'Seguir'
     const buttonClassName = isFollowing ?
     'tw-followCard-button is-following' : 'tw-followCard-button'
+
+    const handleClick = () => {
+        setIsFollowing(!isFollowing)
+    }
 
     return (
         <article className='tw-followCard'>
@@ -23,7 +28,7 @@ const TwitterFollowCard = ({ children, userName = 'unknown' , name, isFollowing}
             </header>
 
             <aside>
-                <button className={buttonClassName}>
+                <button className={buttonClassName} onClick={handleClick} >
                     {text}
                 </button>
             </aside>
