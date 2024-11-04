@@ -1,8 +1,8 @@
 import { useState } from 'react'
 import './TwitterFollowCard.css'
 
-const TwitterFollowCard = ({ children, userName = 'unknown' , name}) => {
-    const [isFollowing, setIsFollowing] = useState(false)
+const TwitterFollowCard = ({ children, userName = 'unknown' , initialIsFollowing}) => {
+    const [isFollowing, setIsFollowing] = useState(initialIsFollowing)
 
     const imageSrc = `https://unavatar.io/${userName}`
     const text = isFollowing ? 'Siguiendo' : 'Seguir'
