@@ -17,7 +17,6 @@ const App = () => {
                 Miguel Ángel Durán
             </TwitterFollowCard>
         </section>
-
     )
 }
 
