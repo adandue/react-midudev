@@ -1,21 +1,41 @@
-import { useState } from 'react'
 import './App.css'
 import { TwitterFollowCard } from './Components/TwitterFollowCard'
+
+const users = [
+    {
+        userName:'adandue',
+        name: 'Adán Dueñas Escobar',
+        isFollowing: true,
+    },
+    {
+        userName:'veroo_monteroo',
+        name: 'monTeroo!',
+        isFollowing: false,
+    },
+    {
+        userName:'midudev',
+        name: 'Miguel Ángel Durán',
+        isFollowing: true,
+    }
+]
 
 const App = () => {
 
     return (
         <section className='App'>
-            <TwitterFollowCard userName='adandue' initialIsFollowing={true}>
-                Adán Dueñas Escobar
-            </TwitterFollowCard>
-            {/*Así se pueden escribir comentarios en jsx */}
-            <TwitterFollowCard userName='veroo_monteroo' >
-                monTeroo!
-            </TwitterFollowCard>
-            <TwitterFollowCard  userName='midudev' >
-                Miguel Ángel Durán
-            </TwitterFollowCard>
+            {
+                users.map(user => {
+                    const { userName, name, isFollowing } = user
+                    return (
+                        <TwitterFollowCard
+                            userName={userName}
+                            initialIsFollowing={isFollowing}
+                        >
+                            {name}
+                        </TwitterFollowCard>
+                    )
+                })
+            }
         </section>
     )
 }
