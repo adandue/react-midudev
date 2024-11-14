@@ -25,9 +25,16 @@ function App() {
   const [turn, setTurn] = useState(TURNS.X)
 
   const updateBoard = (index) => {
+    //No actualizamos esta posición si ya tiene algo
+    if(board[index]) return
+    //actualizar el tablero
     const newBoard = [...board]
+    //spread y rest operators son muy importantes
+    //porque los estados siempre se deben de tratar como inmutables
+    //los datos modificados siempre deben ser nuevos
     newBoard[index] = turn
     setBoard(newBoard)
+    //cambiar el turno
     const newTurn = turn === TURNS.X ? TURNS.O : TURNS.X
     setTurn(newTurn)
   }
