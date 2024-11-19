@@ -68,8 +68,11 @@ function App() {
     //revisar si hay un ganador
     const newWinner = checkWinner(newBoard)
     if (newWinner) {
-      setWinner(newWinner)// la actualización de los estados en React es asíncrona
-      alert(`El ganador es ${newWinner}`)
+      setWinner((prevWinner) => {
+        console.log(`Ganador: ${newWinner}, el anterior era: ${prevWinner}`)
+        return newWinner
+      })// la actualización de los estados en React es asíncrona
+      
     }
   }
 
