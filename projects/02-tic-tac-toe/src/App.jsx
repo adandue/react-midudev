@@ -52,6 +52,12 @@ function App() {
     return null
   }
 
+  const resetGame = () => {
+    setBoard(Array(9).fill(null))
+    setTurn(TURNS.X)
+    setWinner(null)
+  }
+
   const updateBoard = (index) => {
     //No actualizamos esta posición si ya tiene algo
     if(board[index] || winner) return
@@ -76,6 +82,7 @@ function App() {
     <>
       <main className="board">
         <h1>Gato</h1>
+        <button onClick={resetGame}>Volver a comenzar</button>
         <section className="game">
           {
             board.map((_, index) => {
@@ -113,7 +120,7 @@ function App() {
                     {winner && <Square>{winner}</Square>}
                   </header>
                   <footer>
-                    <button>Empezar de nuevo</button>
+                    <button onClick={resetGame}>Empezar de nuevo</button>
                   </footer>
                 </h2>
               </div>
