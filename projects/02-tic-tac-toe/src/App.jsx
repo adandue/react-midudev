@@ -68,12 +68,8 @@ function App() {
     //revisar si hay un ganador
     const newWinner = checkWinner(newBoard)
     if (newWinner) {
-      setWinner((prevWinner) => {
-        console.log(`Ganador: ${newWinner}, el anterior era: ${prevWinner}`)
-        return newWinner
-      })// la actualización de los estados en React es asíncrona
-      
-    }
+      setWinner(newWinner)// la actualización de los estados en React es asíncrona
+    } //TODO: check if the game is over
   }
 
   return (
@@ -103,6 +99,27 @@ function App() {
             {TURNS.O}
           </Square>
         </section>
+        {
+          winner !== null && (
+            <section className="winner">
+              <div className="text">
+                <h2>
+                  {
+                    winner === false
+                      ? 'Empate'
+                      : 'Ganó: '
+                  }
+                  <header className="win">
+                    {winner && <Square>{winner}</Square>}
+                  </header>
+                  <footer>
+                    <button>Empezar de nuevo</button>
+                  </footer>
+                </h2>
+              </div>
+            </section>
+          )
+        }
       </main>
     </>
   )
