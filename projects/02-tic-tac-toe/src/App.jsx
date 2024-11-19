@@ -58,6 +58,12 @@ function App() {
     setWinner(null)
   }
 
+  const checkEndGame = (newBoard) => {
+    //revisamos si hay un empate
+    //si no hay más espacios vacíos en el tablero
+    return newBoard.every((square) => square !== null)
+  }
+
   const updateBoard = (index) => {
     //No actualizamos esta posición si ya tiene algo
     if(board[index] || winner) return
@@ -75,7 +81,9 @@ function App() {
     const newWinner = checkWinner(newBoard)
     if (newWinner) {
       setWinner(newWinner)// la actualización de los estados en React es asíncrona
-    } //TODO: check if the game is over
+    } else if (checkEndGame(newBoard)) {
+      setWinner(false) // empate
+    }
   }
 
   return (
