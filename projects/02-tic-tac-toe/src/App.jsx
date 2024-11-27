@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import confetti from "canvas-confetti"
 import { Square } from "./components/Square"
 import { TURNS } from "./constants"
@@ -51,6 +51,11 @@ function App() {
       setWinner(false) // empate
     }
   }
+
+  useEffect(() => {
+    //como mínimo se ejecuta la primera vez
+    console.log('useEffect')
+  }, [winner]) //cada vez que el valor de winner cambia, se ejecuta el efecto
 
   return (
     <>
