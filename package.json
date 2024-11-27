@@ -8,5 +8,11 @@
   },
   "keywords": [],
   "author": "Adan Duenas <ing.adanduenas@gmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "standard": "^17.1.2"
+  },
+  "eslintConfig": {
+    "extends": "./node_modules/standard/eslintrc.json"
+  }
 }
