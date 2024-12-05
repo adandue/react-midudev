@@ -15,6 +15,10 @@ function App() {
     if(enabled) {
       window.addEventListener('pointermove', handleMove)
     }
+
+    return () => {
+      window.removeEventListener('pointermove', handleMove)
+    } //se ejecuta cada vez que se ejecuta la dependencia
   }, [enabled])
 
   //no puedes usar window.addEventListener() porque se va a ejecutar cada vez que se renderice el componente
